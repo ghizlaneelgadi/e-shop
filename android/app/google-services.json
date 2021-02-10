@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "92643171388",
+    "project_id": "eshop-26e35",
+    "storage_bucket": "eshop-26e35.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:92643171388:android:7666abd4e0fb25eaa0f739",
+        "android_client_info": {
+          "package_name": "com.omar.eshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "92643171388-4gpbndv8m6p2aq3knh42i8svr0fjlsjo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoCTZnO_5osm0Og4LVA4rpxooZZGZCpD4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "92643171388-4gpbndv8m6p2aq3knh42i8svr0fjlsjo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
