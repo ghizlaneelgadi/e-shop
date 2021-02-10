@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:e_shop/Counters/BookQuantity.dart';
+import 'package:e_shop/Counters/itemQuantity.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -27,13 +27,22 @@ Future<void> main() async
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (c)=>CartItemCounter(),),
+        ChangeNotifierProvider(create: (c)=>CartItemCounter(),),
+        ChangeNotifierProvider(create: (c)=>AddressChanger(),),
+        ChangeNotifierProvider(create: (c)=>TotalAmount(),),
+
+      ],
+       child: MaterialApp(
             title: 'e-Shop',
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
-              primaryColor: Colors.green,
+              primaryColor: Colors.blue,
             ),
             home: SplashScreen()
+        ),
     );
   }
 }
@@ -52,7 +61,7 @@ class _SplashScreenState extends State<SplashScreen>
     displaySlash();
   }
   displaySlash(){
-    Timer(Duration(seconds: 5),()async {
+    Timer(Duration(seconds: 3),()async {
       if(await EcommerceApp.auth.currentUser() !=null)
         {
           Route route = MaterialPageRoute(builder: (_)=>StoreHome());
@@ -70,7 +79,7 @@ class _SplashScreenState extends State<SplashScreen>
       child: Container(
         decoration: new BoxDecoration(
           gradient: new LinearGradient(
-              colors: [Colors.pink, Colors.lightGreenAccent],
+              colors: [Colors.pink, Colors.lightBlueAccent],
               begin: const FractionalOffset(0.0 , 0.0),
               end: const FractionalOffset(1.0 , 0.0),
               stops: [0.0, 1.0],

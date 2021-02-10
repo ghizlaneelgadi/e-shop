@@ -60,11 +60,12 @@ class _StoreHomeState extends State<StoreHome> {
                       Icon(
                         Icons.brightness_1,
                         size: 20.0,
-                        color: Colors.green,
+                        color: Colors.blue,
                       ),
                        Positioned(
                           top: 3.0,
                          bottom: 4.0,
+                         left: 4.0,
                          child: Consumer<CartItemCounter>(
                            builder: (context, counter, _){
                              return Text(
@@ -82,6 +83,11 @@ class _StoreHomeState extends State<StoreHome> {
           ],
         ),
         drawer: MyDrawer(),
+        body: CustomScrollView(
+          slivers: [
+            SliverPersistentHeader(pinned: true, delegate: SearchBoxDelegate(),)
+          ],
+        ),
       ),
     );
   }
